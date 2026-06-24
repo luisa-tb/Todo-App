@@ -24,7 +24,13 @@ const { verifyToken } = require("./src/middleware/auth.middleware");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://todo-app-sandy-psi.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 app.use(express.json());
 
 app.get("/api/health", (req, res) => {
