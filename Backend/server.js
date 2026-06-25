@@ -27,10 +27,11 @@ const PORT = process.env.PORT || 3000;
 app.use(
   cors({
     origin: "https://todo-app-sandy-psi.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
+app.options("*", cors());
 app.use(express.json());
 
 app.get("/api/health", (req, res) => {
