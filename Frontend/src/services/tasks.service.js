@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/tareas";
+export const API_URL = import.meta.env.VITE_API_URL;
 
 const obtenerToken = () => {
   const sesionRaw = localStorage.getItem("todo_usuario");
