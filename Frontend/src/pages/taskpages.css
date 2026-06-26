@@ -536,10 +536,13 @@
 @media (max-width: 768px) {
     .tasks-page {
         padding: 16px;
+        height: auto;
+        overflow:visible;
     }
 
     .tasks-inner {
         padding: 20px 16px 28px;
+        overflow: visible;
     }
 
     .tasks-grid {
@@ -551,9 +554,9 @@
     }
 
     .tasks-scroll-container {
-        max-height: none;
-        overflow-x: hidden;
-        overflow-y: visible;
+        max-height: none !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
         padding-right: 0;
     }
 }
