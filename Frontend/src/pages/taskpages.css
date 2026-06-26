@@ -553,7 +553,7 @@
     .tasks-scroll-container {
         max-height: none;
         overflow-x: hidden;
-        /* En móviles es mejor el scroll natural */
+        overflow-y: visible;
         padding-right: 0;
     }
 }
