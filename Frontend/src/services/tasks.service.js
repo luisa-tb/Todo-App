@@ -15,7 +15,7 @@ const obtenerToken = () => {
 
 export const obtenerTareas = async () => {
   const token = obtenerToken();
-  const response = await fetch(API_URL, {
+  const response = await fetch(`${API_URL}/tareas`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const obtenerTareas = async () => {
 
 export const crearTarea = async (datosTarea) => {
   const token = obtenerToken();
-  const response = await fetch(API_URL, {
+  const response = await fetch(`${API_URL}/tareas`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export const crearTarea = async (datosTarea) => {
 
 export const actualizarTarea = async (id, datosTarea) => {
   const token = obtenerToken();
-  const response = await fetch(`${API_URL}/${id}`, {
+  const response = await fetch(`${API_URL}/tareas/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export const actualizarTarea = async (id, datosTarea) => {
 
 export const eliminarTarea = async (id) => {
   const token = obtenerToken();
-  const response = await fetch(`${API_URL}/${id}`, {
+  const response = await fetch(`${API_URL}/tareas/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ export const eliminarTarea = async (id) => {
 
 export const marcarTareaCompletada = async (id) => {
   const token = obtenerToken();
-  const response = await fetch(`${API_URL}/${id}/completada`, {
+  const response = await fetch(`${API_URL}/tareas/${id}/completada`, {
     method: "PATCH",
     headers: {
       Authorization: `Bearer ${token}`,
